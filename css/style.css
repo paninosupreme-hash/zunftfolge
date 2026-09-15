@@ -67,6 +67,18 @@ label.role-pill:has(input:checked){ background:var(--accent-soft); border-color:
 
 .placeholder-fill{ background:oklch(93% 0.05 60 / 0.5); color:#8A4B14; padding:1px 5px; border-radius:4px; font-weight:600; }
 
+.form-alert{ display:none; background:oklch(94% 0.05 25); color:oklch(40% 0.16 25); border:1px solid oklch(75% 0.1 25); border-radius:8px; padding:14px 16px; font-size:14px; line-height:1.5; font-weight:500; }
+.form-alert.visible{ display:block; }
+
+/* The header content (logo + nav + 3 CTA buttons) is exactly as wide as the
+   1440px page container has room for, with no margin to spare — .page's
+   max-width caps the available space at every viewport once it's reached,
+   so a "wider screen" never gives this row more breathing room. Wrap it
+   onto its own rows unconditionally instead of trying to fit it on one. */
+header{ flex-wrap:wrap; row-gap:14px; }
+nav{ order:3; flex-basis:100%; justify-content:center; flex-wrap:wrap; gap:16px !important; }
+.header-ctas{ flex-basis:100%; justify-content:center; flex-wrap:wrap; }
+
 /* Mobile fallback: the design is a fixed desktop layout; below this breakpoint
    we stack the two-column rows/grids and shrink padding so nothing overflows. */
 @media (max-width: 860px){

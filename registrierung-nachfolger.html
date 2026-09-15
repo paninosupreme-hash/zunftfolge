@@ -42,6 +42,8 @@
       <input type="hidden" name="form_type" value="Registrierung Nachfolger">
       <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
 
+      <div class="form-alert" id="form-error"></div>
+
       <div class="stack-sm" style="display:flex; gap:16px;">
         <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
           <label class="field-label" for="name">Name</label>
@@ -156,5 +158,21 @@
   </footer>
 
 </div>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var msg = params.get('fehler');
+  if (!msg) return;
+  var box = document.getElementById('form-error');
+  if (box) {
+    box.textContent = msg;
+    box.classList.add('visible');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  params.delete('fehler');
+  var query = params.toString();
+  history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
+})();
+</script>
 </body>
 </html>

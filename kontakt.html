@@ -41,6 +41,8 @@
       <input type="hidden" name="form_type" value="Kontaktformular">
       <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
 
+      <div class="form-alert" id="form-error"></div>
+
       <div style="display:flex; flex-direction:column; gap:10px;">
         <span class="field-label">Ich bin …</span>
         <div style="display:flex; gap:12px;">
@@ -133,5 +135,21 @@
   </footer>
 
 </div>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var msg = params.get('fehler');
+  if (!msg) return;
+  var box = document.getElementById('form-error');
+  if (box) {
+    box.textContent = msg;
+    box.classList.add('visible');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  params.delete('fehler');
+  var query = params.toString();
+  history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
+})();
+</script>
 </body>
 </html>
