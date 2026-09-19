@@ -30,12 +30,12 @@
     </div>
   </header>
 
-  <section style="padding:72px 72px 0; display:flex; flex-direction:column; gap:12px; max-width:640px;">
+  <section class="reveal" style="padding:72px 72px 0; display:flex; flex-direction:column; gap:12px; max-width:640px;">
     <h1 style="font-size:40px; line-height:1.18;">Nehmen Sie Kontakt auf.</h1>
     <p style="font-size:17px; line-height:1.6; color:var(--text-muted);">Unverbindlich, diskret, ohne Verpflichtung — wir melden uns in der Regel innerhalb eines Werktags.</p>
   </section>
 
-  <section class="stack-sm" style="padding:48px 72px 96px; display:flex; gap:56px; align-items:flex-start;">
+  <section class="stack-sm reveal" style="padding:48px 72px 96px; display:flex; gap:56px; align-items:flex-start;">
 
     <form action="php/send-form.php" method="post" style="flex:1 1 0; max-width:640px; display:flex; flex-direction:column; gap:22px; background:var(--bg-alt); border:1px solid var(--border); border-radius:14px; padding:36px;">
       <input type="hidden" name="form_type" value="Kontaktformular">
@@ -151,5 +151,8 @@
   history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/reveal.js"></script>
 </body>
 </html>

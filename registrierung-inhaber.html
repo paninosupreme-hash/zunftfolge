@@ -30,13 +30,13 @@
     </div>
   </header>
 
-  <section style="padding:64px 72px 0; display:flex; flex-direction:column; gap:12px; max-width:640px;">
+  <section class="reveal" style="padding:64px 72px 0; display:flex; flex-direction:column; gap:12px; max-width:640px;">
     <span class="badge" style="display:inline-flex; align-self:flex-start; font-size:12px; font-weight:600; color:var(--accent-hover); background:var(--accent-soft); padding:5px 12px; border-radius:20px;">Für Inhaber</span>
     <h1 style="font-size:38px; line-height:1.18;">Registrieren Sie sich kostenlos.</h1>
     <p style="font-size:16.5px; line-height:1.6; color:var(--text-muted);">Unverbindlich und diskret — Registrierung und Erstgespräch kosten Sie nichts. Eine Gebühr fällt erst an, wenn eine Übergabe tatsächlich zustande kommt.</p>
   </section>
 
-  <section class="stack-sm" style="padding:40px 72px 96px; display:flex; gap:56px; align-items:flex-start;">
+  <section class="stack-sm reveal" style="padding:40px 72px 96px; display:flex; gap:56px; align-items:flex-start;">
 
     <form action="php/send-form.php" method="post" style="flex:1 1 0; max-width:640px; display:flex; flex-direction:column; gap:22px; background:var(--bg-alt); border:1px solid var(--border); border-radius:14px; padding:36px;">
       <input type="hidden" name="form_type" value="Registrierung Inhaber">
@@ -176,5 +176,8 @@
   history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/reveal.js"></script>
 </body>
 </html>

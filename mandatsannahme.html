@@ -31,13 +31,13 @@
     </div>
   </header>
 
-  <section style="padding:64px 72px 0; display:flex; flex-direction:column; gap:12px; max-width:760px;">
+  <section class="reveal" style="padding:64px 72px 0; display:flex; flex-direction:column; gap:12px; max-width:760px;">
     <span class="badge" style="display:inline-flex; align-self:flex-start; font-size:12px; font-weight:600; color:var(--accent-hover); background:var(--accent-soft); padding:5px 12px; border-radius:20px;">Letzter Schritt vor der aktiven Suche</span>
     <h1 style="font-size:36px; line-height:1.2;">Ihr Mandat für die Nachfolgesuche.</h1>
     <p style="font-size:16.5px; line-height:1.6; color:var(--text-muted);">Mit der Mandatsannahme beauftragen Sie Zunftfolge, aktiv und diskret einen passenden Nachfolger für Ihren Betrieb zu suchen. Die folgenden Punkte fassen die wichtigsten Eckpunkte zusammen — den vollständigen Vertrag erhalten Sie im Anschluss per E-Mail.</p>
   </section>
 
-  <section style="padding:40px 72px 24px; display:flex; flex-direction:column; gap:24px; max-width:1000px;">
+  <section class="reveal" style="padding:40px 72px 24px; display:flex; flex-direction:column; gap:24px; max-width:1000px;">
     <div class="grid-2" style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:24px;">
       <div style="background:var(--bg-alt); border-radius:10px; padding:26px; display:flex; flex-direction:column; gap:10px; border:1px solid var(--border);">
         <h3 style="font-size:16px;">Leistungsumfang</h3>
@@ -58,7 +58,7 @@
     </div>
   </section>
 
-  <section style="padding:24px 72px 88px; display:flex; flex-direction:column; gap:24px; max-width:760px;">
+  <section class="reveal" style="padding:24px 72px 88px; display:flex; flex-direction:column; gap:24px; max-width:760px;">
     <form action="php/send-form.php" method="post" style="background:var(--bg); border:1px solid var(--border); border-radius:14px; padding:32px; display:flex; flex-direction:column; gap:20px;">
       <input type="hidden" name="form_type" value="Mandatsannahme">
       <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" aria-hidden="true">
@@ -146,5 +146,8 @@
   history.replaceState(null, '', location.pathname + (query ? '?' + query : '') + location.hash);
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/reveal.js"></script>
 </body>
 </html>
