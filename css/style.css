@@ -94,6 +94,13 @@ footer.site-footer p{ color:var(--text-muted); }
 footer.site-footer a{ color:var(--text); }
 footer.site-footer .footer-head{ color:var(--text-muted); }
 
+.faq-item{ border-bottom:1px solid var(--border); padding:18px 0; }
+.faq-item summary{ cursor:pointer; font-weight:600; font-size:15.5px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{ content:"+"; font-size:20px; font-weight:400; color:var(--text-muted); flex:0 0 auto; }
+.faq-item[open] summary::after{ content:"\2212"; }
+.faq-item p{ margin-top:12px; font-size:14.5px; color:var(--text-muted); line-height:1.6; }
+
 /* Mobile fallback: the design is a fixed desktop layout; below this breakpoint
    we stack the two-column rows/grids and shrink padding so nothing overflows. */
 header{ flex-wrap:wrap; row-gap:14px; }
