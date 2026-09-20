@@ -39,49 +39,95 @@
 
   <section class="reveal stack-sm" style="padding:56px 72px 100px; display:flex; gap:64px; align-items:flex-start;">
 
-    <div style="flex:1 1 0; display:flex; flex-direction:column; gap:24px; max-width:480px;">
+    <div style="flex:1 1 0; display:flex; flex-direction:column; gap:36px; max-width:480px;">
 
-      <div>
-        <label class="field-label" for="branche">Branche</label>
-        <select class="field-select" id="branche">
-          <option value="2.5,4.0">Elektro-, SHK- &amp; Bauhandwerk</option>
-          <option value="2.0,3.0">Nahrungsmittelhandwerk (Bäckerei, Metzgerei, Konditorei)</option>
-          <option value="2.5,3.5">Holz- &amp; Ausbauhandwerk (Tischlerei, Schreinerei)</option>
-          <option value="2.5,3.8">KFZ- &amp; Metallhandwerk</option>
-          <option value="2.0,3.5" selected>Sonstiges Handwerk</option>
-        </select>
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <span style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Ertragslage</span>
+
+        <div>
+          <label class="field-label" for="branche">Branche</label>
+          <select class="field-select" id="branche">
+            <option value="2.5,4.0">Elektro-, SHK- &amp; Bauhandwerk</option>
+            <option value="2.0,3.0">Nahrungsmittelhandwerk (Bäckerei, Metzgerei, Konditorei)</option>
+            <option value="2.5,3.5">Holz- &amp; Ausbauhandwerk (Tischlerei, Schreinerei)</option>
+            <option value="2.5,3.8">KFZ- &amp; Metallhandwerk</option>
+            <option value="2.0,3.5" selected>Sonstiges Handwerk</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="field-label" for="umsatz">Jahresumsatz (optional)</label>
+          <input class="field-input" type="number" id="umsatz" placeholder="z. B. 850000" min="0" step="1000" inputmode="numeric">
+          <p class="field-note" style="margin-top:8px;">Nur für die Umsatzrenditen-Einordnung unten, fließt nicht in die Wertspanne ein.</p>
+        </div>
+
+        <div>
+          <label class="field-label" for="gewinn">Durchschnittlicher Jahresgewinn</label>
+          <input class="field-input" type="number" id="gewinn" placeholder="z. B. 120000" min="0" step="1000" inputmode="numeric">
+          <p class="field-note" style="margin-top:8px;">Vor Steuern, Mittelwert der letzten drei Geschäftsjahre.</p>
+        </div>
+
+        <div>
+          <label class="field-label" for="lohn">Kalkulatorischer Unternehmerlohn</label>
+          <input class="field-input" type="number" id="lohn" value="55000" min="0" step="1000" inputmode="numeric">
+          <p class="field-note" style="margin-top:8px;">Das, was eine angestellte Geschäftsführung kosten würde — wird abgezogen, da der Gewinn sonst auch Ihre eigene Arbeitsleistung mitbewertet. Faustregel: 45.000–65.000 €.</p>
+        </div>
       </div>
 
-      <div>
-        <label class="field-label" for="gewinn">Durchschnittlicher Jahresgewinn</label>
-        <input class="field-input" type="number" id="gewinn" placeholder="z. B. 120000" min="0" step="1000" inputmode="numeric">
-        <p class="field-note" style="margin-top:8px;">Vor Steuern, Mittelwert der letzten drei Geschäftsjahre.</p>
+      <div style="display:flex; flex-direction:column; gap:14px; border-top:1px solid var(--border); padding-top:28px;">
+        <span style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Qualitative Faktoren</span>
+        <label class="check-row" style="cursor:pointer;">
+          <input class="check-box" type="checkbox" id="mod-abhaengig" data-adjust="-0.4">
+          <span style="font-size:14px; line-height:1.5;">Ohne Sie läuft der Betrieb kaum (hohe Inhaberabhängigkeit, kein Meister/Vertretung vorhanden)</span>
+        </label>
+        <label class="check-row" style="cursor:pointer;">
+          <input class="check-box" type="checkbox" id="mod-kunden" data-adjust="0.3">
+          <span style="font-size:14px; line-height:1.5;">Fester, wiederkehrender Kundenstamm (z. B. Wartungsverträge, treue Stammkunden)</span>
+        </label>
+        <label class="check-row" style="cursor:pointer;">
+          <input class="check-box" type="checkbox" id="mod-investstau" data-adjust="-0.3">
+          <span style="font-size:14px; line-height:1.5;">Investitionsstau bei Maschinen, Fuhrpark oder Werkstatt</span>
+        </label>
       </div>
 
-      <div>
-        <label class="field-label" for="lohn">Kalkulatorischer Unternehmerlohn</label>
-        <input class="field-input" type="number" id="lohn" value="55000" min="0" step="1000" inputmode="numeric">
-        <p class="field-note" style="margin-top:8px;">Das, was eine angestellte Geschäftsführung kosten würde — wird abgezogen, da der Gewinn sonst auch Ihre eigene Arbeitsleistung mitbewertet. Faustregel: 45.000–65.000 €.</p>
+      <div style="display:flex; flex-direction:column; gap:20px; border-top:1px solid var(--border); padding-top:28px;">
+        <span style="font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Substanz (optional)</span>
+        <div>
+          <label class="field-label" for="vermoegen">Zeitwert Maschinen, Fahrzeuge, Ausstattung</label>
+          <input class="field-input" type="number" id="vermoegen" placeholder="z. B. 180000" min="0" step="1000" inputmode="numeric">
+        </div>
+        <div>
+          <label class="field-label" for="schulden">Verbindlichkeiten (Kredite, Leasing, offene Rechnungen)</label>
+          <input class="field-input" type="number" id="schulden" placeholder="z. B. 60000" min="0" step="1000" inputmode="numeric">
+        </div>
       </div>
 
     </div>
 
-    <div style="flex:1 1 0; display:flex; flex-direction:column; gap:20px; background:var(--bg-alt); border:1px solid var(--border); border-radius:4px; padding:36px; max-width:480px;">
+    <div style="flex:1 1 0; display:flex; flex-direction:column; gap:18px; background:var(--bg-alt); border:1px solid var(--border); border-radius:4px; padding:36px; max-width:480px; position:sticky; top:96px;">
 
       <span class="badge" style="align-self:flex-start;">Ergebnis</span>
 
       <div id="result-empty" style="font-size:15px; color:var(--text-muted); line-height:1.6;">Tragen Sie links Ihren Jahresgewinn ein, um eine Wertspanne zu sehen.</div>
 
-      <div id="result-value" style="display:none; flex-direction:column; gap:6px;">
-        <span class="stat-num" style="font-size:32px;" id="result-range"></span>
-        <span class="stat-caption">Grobe Wertspanne für Ihren Betrieb</span>
+      <div id="result-value" style="display:none; flex-direction:column; gap:16px;">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <span class="stat-num" style="font-size:32px;" id="result-range"></span>
+          <span class="stat-caption">Ertragswert-Spanne (mit Ihren Anpassungen)</span>
+        </div>
+
+        <div id="result-detail" style="font-size:13px; color:var(--text-muted); line-height:1.7; border-top:1px solid var(--border); padding-top:14px;"></div>
+
+        <div id="result-substanz" style="display:none; font-size:13.5px; color:var(--text); line-height:1.6; background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:14px 16px;"></div>
+
+        <div id="result-rendite" style="display:none; font-size:13.5px; color:var(--text); line-height:1.6; background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:14px 16px;"></div>
       </div>
 
       <div id="result-negative" style="display:none; font-size:14px; color:var(--text); line-height:1.6; background:oklch(93% 0.05 60 / 0.35); border:1px solid oklch(80% 0.08 60); border-radius:4px; padding:16px 18px;">
-        Bei diesem Unternehmerlohn ergibt sich rechnerisch kein positiver bereinigter Gewinn. Das heißt nicht, dass Ihr Betrieb wertlos ist — Substanz wie Maschinen, Kundenstamm und Standort zählen hier stärker. Das lässt sich nur im persönlichen Gespräch seriös einschätzen.
+        Bei diesem Unternehmerlohn ergibt sich rechnerisch kein positiver bereinigter Gewinn. Das heißt nicht, dass Ihr Betrieb wertlos ist — der Substanzwert (siehe unten, falls angegeben) zählt dann stärker. Das lässt sich nur im persönlichen Gespräch seriös einschätzen.
       </div>
 
-      <p style="font-size:12.5px; color:var(--text-muted); line-height:1.55; border-top:1px solid var(--border); padding-top:16px;">Grobe Orientierung nach vereinfachtem Multiplikatorverfahren — <strong>keine</strong> Unternehmensbewertung im rechtlichen Sinn. Der tatsächliche Wert hängt von zahlreichen weiteren Faktoren ab (Kundenstruktur, Standort, Vertragslage, Marktumfeld) und wird im Rahmen einer Mandatsannahme individuell ermittelt.</p>
+      <p style="font-size:12.5px; color:var(--text-muted); line-height:1.55; border-top:1px solid var(--border); padding-top:16px;">Grobe Orientierung nach vereinfachtem Multiplikatorverfahren — <strong>keine</strong> Unternehmensbewertung im rechtlichen Sinn und unverbindlich. Der tatsächliche Wert hängt von zahlreichen weiteren Faktoren ab und wird im Rahmen einer Mandatsannahme individuell ermittelt. Keine Registrierung nötig, um dieses Ergebnis zu sehen.</p>
 
       <a href="registrierung-inhaber.html" class="btn btn-primary" style="align-self:flex-start;">Für eine fundierte Einschätzung registrieren</a>
 
@@ -119,11 +165,19 @@
 <script>
 (function () {
   var brancheEl = document.getElementById('branche');
+  var umsatzEl = document.getElementById('umsatz');
   var gewinnEl = document.getElementById('gewinn');
   var lohnEl = document.getElementById('lohn');
+  var vermoegenEl = document.getElementById('vermoegen');
+  var schuldenEl = document.getElementById('schulden');
+  var modEls = [document.getElementById('mod-abhaengig'), document.getElementById('mod-kunden'), document.getElementById('mod-investstau')];
+
   var emptyEl = document.getElementById('result-empty');
   var valueEl = document.getElementById('result-value');
   var rangeEl = document.getElementById('result-range');
+  var detailEl = document.getElementById('result-detail');
+  var substanzEl = document.getElementById('result-substanz');
+  var renditeEl = document.getElementById('result-rendite');
   var negEl = document.getElementById('result-negative');
 
   function formatEUR(n) {
@@ -153,16 +207,47 @@
     }
 
     var parts = brancheEl.value.split(',').map(Number);
-    var low = bereinigt * parts[0];
-    var high = bereinigt * parts[1];
+    var adjust = modEls.reduce(function (sum, el) {
+      return sum + (el.checked ? parseFloat(el.getAttribute('data-adjust')) : 0);
+    }, 0);
+    var multLow = Math.max(1.0, parts[0] + adjust);
+    var multHigh = Math.max(multLow + 0.2, parts[1] + adjust);
+
+    var low = bereinigt * multLow;
+    var high = bereinigt * multHigh;
     rangeEl.textContent = formatEUR(low) + ' – ' + formatEUR(high);
+
+    var detailParts = ['Bereinigter Gewinn: ' + formatEUR(bereinigt)];
+    detailParts.push('Angewandter Multiplikator: ' + multLow.toFixed(1) + '–' + multHigh.toFixed(1) + (adjust !== 0 ? ' (Basis ' + parts[0].toFixed(1) + '–' + parts[1].toFixed(1) + ', angepasst)' : ''));
+    detailEl.innerHTML = detailParts.join('<br>');
+
+    var vermoegen = parseFloat(vermoegenEl.value);
+    var schulden = parseFloat(schuldenEl.value);
+    if (!isNaN(vermoegen) && vermoegenEl.value !== '') {
+      if (isNaN(schulden)) schulden = 0;
+      var substanz = vermoegen - schulden;
+      substanzEl.textContent = 'Substanzwert: ' + formatEUR(substanz) + ' — oft die Wertuntergrenze, besonders bei stark inhaberabhängigen Betrieben.';
+      substanzEl.style.display = 'block';
+    } else {
+      substanzEl.style.display = 'none';
+    }
+
+    var umsatz = parseFloat(umsatzEl.value);
+    if (!isNaN(umsatz) && umsatzEl.value !== '' && umsatz > 0) {
+      var rendite = (bereinigt / umsatz) * 100;
+      var einordnung = rendite < 5 ? 'unterdurchschnittlich' : (rendite > 10 ? 'überdurchschnittlich' : 'branchenüblich');
+      renditeEl.textContent = 'Umsatzrendite: ca. ' + rendite.toFixed(1).replace('.', ',') + ' % — für Handwerksbetriebe ' + einordnung + ' (Richtwert 5–10 %).';
+      renditeEl.style.display = 'block';
+    } else {
+      renditeEl.style.display = 'none';
+    }
 
     emptyEl.style.display = 'none';
     negEl.style.display = 'none';
     valueEl.style.display = 'flex';
   }
 
-  [brancheEl, gewinnEl, lohnEl].forEach(function (el) {
+  [brancheEl, umsatzEl, gewinnEl, lohnEl, vermoegenEl, schuldenEl].concat(modEls).forEach(function (el) {
     el.addEventListener('input', calc);
     el.addEventListener('change', calc);
   });
