@@ -56,15 +56,20 @@ widersprechen oder einen Tech-Stack voraussetzen, den es hier nicht gibt):
 aframe-webxr, babylonjs-engine, playcanvas-engine, pixijs-2d,
 animated-component-libraries, motion-framer, animejs, barba-js,
 locomotive-scroll, lightweight-3d-effects, lottie-animations,
-blender-web-pipeline. Falls für ein *anderes* Projekt des Users relevant
-(z. B. `robomatch-design` ist explizit nur fürs RoboMatch-Projekt gedacht),
-hier nicht anwenden.
+blender-web-pipeline, react-spring-physics, react-three-fiber,
+rive-interactive, scroll-reveal-libraries, spline-interactive,
+substance-3d-texturing, threejs-webgl, web3d-integration-patterns.
+Falls für ein *anderes* Projekt des Users relevant (z. B. `robomatch-design`
+ist explizit nur fürs RoboMatch-Projekt gedacht), hier nicht anwenden.
 
 ## Offene Punkte
 
 - `impressum.html` hat noch Platzhalter (`[Vor- und Nachname des
   Betreibers]`) — echte Firmendaten der Plotter Fix GmbH (Rechtsform,
   Adresse, Registergericht+HRB, USt-IdNr, Geschäftsführer) fehlen noch.
-- Strukturelle "Anti-Slop"-Überarbeitung (Font, Hero-Layout, Icon-Entfernung,
-  Radien) bisher nur auf `index.html` angewendet; Rollout auf die anderen
-  14 Seiten steht noch aus und braucht vorher OK vom User.
+- Strukturelle "Anti-Slop"-Überarbeitung (Font, Radien, Badges,
+  Deko-Icon-Entfernung) ist inzwischen auf allen 15 Seiten angewendet. Der
+  edge-to-edge-Hero-Bildschnitt aus `index.html` wurde bewusst nicht auf die
+  anderen Seiten übertragen (deren Hero-Bilder bleiben in der klassischen
+  gerahmten Box, nur mit geschärftem Radius) — das wäre eine größere
+  Layout-Änderung pro Seite und stand nicht explizit zur Freigabe.
