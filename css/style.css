@@ -10,7 +10,7 @@
   --accent2: oklch(50% 0.1 45);
   --accent2-soft: oklch(93% 0.035 45);
   --border: oklch(88% 0.012 85);
-  --serif: 'Spectral', 'Iowan Old Style', Georgia, serif;
+  --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
   --sans: 'Work Sans', 'Segoe UI', system-ui, sans-serif;
   --shadow-sm: 0 1px 2px oklch(20% 0.012 260 / 0.06), 0 1px 1px oklch(20% 0.012 260 / 0.04);
   --shadow-md: 0 8px 20px -10px oklch(20% 0.012 260 / 0.16), 0 2px 6px -2px oklch(20% 0.012 260 / 0.07);
@@ -36,7 +36,7 @@ header{ position:sticky; top:0; z-index:40; background:var(--bg); }
 .navlink:hover::after, .navlink.active::after{ right:0; }
 .navlink.active{ color:var(--accent); }
 
-.btn{ display:inline-flex; align-items:center; justify-content:center; height:48px; padding:0 26px; border-radius:4px; font-family:var(--sans); font-weight:600; font-size:14.5px; letter-spacing:0.005em; cursor:pointer; white-space:nowrap; border:none; transition:transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background-color 0.15s var(--ease), color 0.15s var(--ease); }
+.btn{ display:inline-flex; align-items:center; justify-content:center; height:48px; padding:0 26px; border-radius:2px; font-family:var(--sans); font-weight:600; font-size:14.5px; letter-spacing:0.005em; cursor:pointer; white-space:nowrap; border:none; transition:transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background-color 0.15s var(--ease), color 0.15s var(--ease); }
 .btn-primary{ background:var(--ink); color:var(--bg); }
 .btn-primary:hover{ background:var(--accent-hover); color:var(--bg); }
 .btn-outline{ background:transparent; color:var(--ink); border:1.5px solid var(--border); }
@@ -44,7 +44,7 @@ header{ position:sticky; top:0; z-index:40; background:var(--bg); }
 .btn-compact{ height:40px; padding:0 18px; font-size:13px; }
 a.btn, button.btn{ text-decoration:none; }
 
-.badge{ font-size:11px; font-weight:600; letter-spacing:0.03em; color:var(--text-muted); background:var(--bg-alt); padding:5px 10px; border-radius:20px; border:1px solid var(--border); }
+.badge{ font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); padding:0 0 3px; border-bottom:1.5px solid var(--accent); }
 
 /* Form elements */
 .field-label{ font-size:12.5px; font-weight:600; color:var(--text); display:block; margin-bottom:8px; letter-spacing:0.01em; }
@@ -57,7 +57,7 @@ textarea.field-input{ height:100px; padding-top:12px; resize:vertical; }
 .field-input:focus, .field-select:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
 select.field-select{ appearance:none; -webkit-appearance:none; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23736f66' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; }
 
-.role-pill{ display:flex; align-items:center; justify-content:center; height:46px; border-radius:6px; border:1.5px solid var(--border); font-size:13.5px; font-weight:600; color:var(--text-muted); cursor:pointer; flex:1; background:var(--bg); font-family:var(--sans); transition:border-color 0.15s var(--ease), background-color 0.15s var(--ease), color 0.15s var(--ease); }
+.role-pill{ display:flex; align-items:center; justify-content:center; height:46px; border-radius:3px; border:1.5px solid var(--border); font-size:13.5px; font-weight:600; color:var(--text-muted); cursor:pointer; flex:1; background:var(--bg); font-family:var(--sans); transition:border-color 0.15s var(--ease), background-color 0.15s var(--ease), color 0.15s var(--ease); }
 .role-pill.selected{ background:var(--accent-soft); border-color:var(--accent); color:var(--accent-hover); }
 input.role-radio{ position:absolute; opacity:0; width:0; height:0; }
 label.role-pill:has(input:checked){ background:var(--accent-soft); border-color:var(--accent); color:var(--accent-hover); }
@@ -71,10 +71,11 @@ label.role-pill:has(input:checked){ background:var(--accent-soft); border-color:
 .check-box:checked{ background:var(--accent); border-color:var(--accent); position:relative; }
 .check-box:checked::after{ content:""; position:absolute; left:5px; top:2px; width:6px; height:10px; border:solid white; border-width:0 2px 2px 0; transform:rotate(45deg); }
 
-.doc-card{ background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:26px; display:flex; flex-direction:column; gap:14px; box-shadow:var(--shadow-sm); transition:box-shadow 0.2s var(--ease), border-color 0.2s var(--ease); }
-.doc-card:hover{ box-shadow:var(--shadow-md); border-color:oklch(80% 0.012 85); }
-.doc-icon{ width:44px; height:44px; border-radius:9px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; }
-.dl-btn{ display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 16px; border-radius:6px; background:var(--accent-soft); color:var(--accent-hover); font-size:13.5px; font-weight:600; align-self:flex-start; transition:background-color 0.15s var(--ease); }
+.doc-card{ background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:26px; display:flex; flex-direction:column; gap:14px; transition:border-color 0.2s var(--ease); }
+.doc-card:hover{ border-color:var(--ink); }
+.doc-icon{ display:none; }
+.dl-btn{ display:inline-flex; align-items:center; gap:8px; height:38px; padding:0 4px; background:transparent; color:var(--ink); border-bottom:1.5px solid var(--ink); border-radius:0; font-size:13.5px; font-weight:600; align-self:flex-start; transition:opacity 0.15s var(--ease); }
+.dl-btn:hover{ opacity:0.65; color:var(--ink); }
 
 .field-note{ font-size:12.5px; color:var(--text-muted); line-height:1.5; }
 
@@ -86,8 +87,8 @@ label.role-pill:has(input:checked){ background:var(--accent-soft); border-color:
 .stat-num{ font-family:var(--serif); font-weight:600; color:var(--accent); line-height:1; }
 .stat-caption{ font-size:14.5px; color:var(--text-muted); line-height:1.55; }
 
-.card-elevated{ background:var(--bg); border:1px solid var(--border); border-radius:10px; box-shadow:var(--shadow-sm); transition:box-shadow 0.2s var(--ease); }
-.card-elevated:hover{ box-shadow:var(--shadow-md); }
+.card-elevated{ background:var(--bg); border:1px solid var(--border); border-radius:4px; transition:border-color 0.2s var(--ease); }
+.card-elevated:hover{ border-color:var(--ink); }
 
 footer.site-footer{ border-top:1px solid var(--border); }
 footer.site-footer p{ color:var(--text-muted); }
