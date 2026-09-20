@@ -120,7 +120,7 @@ nav{ order:3; flex-basis:100%; justify-content:center; flex-wrap:wrap; gap:16px 
   [style*="max-width:600px"]{ max-width:100% !important; }
   [style*="max-width:760px"]{ max-width:100% !important; }
   [style*="max-width:1000px"]{ max-width:100% !important; }
-  .hero-banner{ height:280px !important; }
+  .hero-banner{ height:280px !important; min-height:0 !important; flex:1 1 auto !important; width:100% !important; }
   .founder-secondary{ padding:32px 0 0 !important; border-left:none !important; border-top:1px solid var(--border); margin-top:8px; }
   .btn{ white-space:normal !important; height:auto !important; min-height:48px; padding:12px 22px !important; text-align:center; }
   [style*="max-width:480px"]{ max-width:100% !important; }
