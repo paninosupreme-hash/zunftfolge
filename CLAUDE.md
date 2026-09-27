@@ -64,9 +64,15 @@ ist explizit nur fürs RoboMatch-Projekt gedacht), hier nicht anwenden.
 
 ## Offene Punkte
 
-- `impressum.html` hat noch Platzhalter (`[Vor- und Nachname des
-  Betreibers]`) — echte Firmendaten der Plotter Fix GmbH (Rechtsform,
-  Adresse, Registergericht+HRB, USt-IdNr, Geschäftsführer) fehlen noch.
+- `impressum.html`: Betreiber-Name und Anschrift sind jetzt echt (Zehra
+  Genç, Kleine Ehrenfeldstraße 6, 44789 Bochum). Noch offen: Telefonnummer
+  und zuständiges Gewerbeamt (weiterhin gelb markierte Platzhalter).
+  Hinweis: Die Website erzählt an anderer Stelle (ueber-uns.html,
+  fuer-partner.html) die Gründungsgeschichte über Ismet Genç/Plotter Fix
+  GmbH — der Impressum-Betreiber ist eine andere, real benannte Person;
+  das ist so gewollt und kein Fehler, nur beim Weiterbauen im Kopf
+  behalten, falls Rechtsform/Gewerbe-Text daraus abgeleitete Annahmen
+  bräuchten.
 - Strukturelle "Anti-Slop"-Überarbeitung (Font, Radien, Badges,
   Deko-Icon-Entfernung) ist inzwischen auf allen 15 Seiten angewendet. Der
   edge-to-edge-Hero-Bildschnitt aus `index.html` wurde bewusst nicht auf die
